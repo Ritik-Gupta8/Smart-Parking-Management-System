@@ -157,7 +157,7 @@ api.add_resource(CurrentUserAPI, "/api/me")
 class UserListAPI(Resource):
     @auth_required('token')
     @roles_required('admin')
-    @cache.cached(timeout=300)
+    # @cache.cached(timeout=300)
     def get(self):
         users = User.query.filter(User.id != current_user.id).all()
         data = []
@@ -249,7 +249,7 @@ api.add_resource(MyReservationAPI, "/api/my_reservations")
 ####################################################################################
 class ReservationCostAPI(Resource):
     @auth_required('token')
-    @cache.cached(timeout=300)
+    # @cache.cached(timeout=300)
     def get(self, res_id):
         r = Reservation.query.get_or_404(res_id)
         if r.user_id != current_user.id and not current_user.has_role('admin'):
@@ -321,7 +321,7 @@ api.add_resource(UserSummaryAPI, "/api/user_summary")
 
 class SpotInfoAPI(Resource):
     @auth_required('token')
-    @cache.cached(timeout=300)
+    # @cache.cached(timeout=300)
     def get(self, spot_id):
         spot = ParkingSpot.query.get_or_404(spot_id)
         reservation = Reservation.query.filter_by(spot_id=spot.id, leaving_time=None).first()

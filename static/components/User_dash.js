@@ -66,14 +66,18 @@ export default {
                 <td>{{ r.vehicle_number }}</td>
                 <td>{{ formatDT(r.parking_time) }}</td>
                 <td>{{ r.leaving_time ? formatDT(r.leaving_time) : '—' }}</td>
-                <td>
-                  <button v-if="!r.leaving_time" class="btn btn-sm text-white fw-bold" style="background-color: #c00b39ff;" @click="openReleaseForm(r)">
+                <td class="text-end">
+                  <button v-if="!r.leaving_time" class="btn btn-sm text-white fw-bold"
+                          style="background-color: #c00b39ff;" 
+                          @click="openReleaseForm(r)">
                     Occupied
                   </button>
-                  <span v-else class="btn btn-sm fw-bold text-white" style="background-color: #6e250f8e; pointer-events: none; cursor: default;">
+                  <span v-else class="btn btn-sm fw-bold text-white"
+                        style="background-color: #6e250f8e; pointer-events: none; cursor: default;">
                     Released
                   </span>
                 </td>
+
               </tr>
             </tbody>
           </table>
