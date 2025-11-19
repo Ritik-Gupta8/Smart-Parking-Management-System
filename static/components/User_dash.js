@@ -126,7 +126,7 @@ export default {
           </div>
         </div>
       </div>
-
+ 
       <div class="modal fade" ref="releaseModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
