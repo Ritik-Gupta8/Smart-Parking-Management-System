@@ -18,3 +18,93 @@
 
 
 
+/* Professional Animated Parking Background */
+.parking-bg-container {
+  position: relative;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  overflow: hidden;
+  z-index: 0;
+}
+
+.parking-lines-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* Thin yellow diagonal lines mimicking parking spaces */
+  background-image: linear-gradient(-45deg, transparent 48%, rgba(250, 204, 21, 0.4) 48%, rgba(250, 204, 21, 0.4) 52%, transparent 52%);
+  background-size: 80px 80px;
+  animation: slideParkingLines 4s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.parking-glow {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 60%);
+  border-radius: 50%;
+  animation: floatGlow 10s ease-in-out infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.parking-glow-2 {
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(250, 204, 21, 0.15) 0%, transparent 60%);
+  border-radius: 50%;
+  animation: floatGlowReverse 8s ease-in-out infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes slideParkingLines {
+  0% { background-position: 0 0; }
+  100% { background-position: 80px 80px; }
+}
+
+@keyframes floatGlow {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(150px, 80px) scale(1.3); }
+}
+
+@keyframes floatGlowReverse {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-100px, -80px) scale(1.2); }
+}
+
+/* Premium Form Card */
+.glass-form-card-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 420px;
+  z-index: 1;
+  padding: 1rem;
+}
+
+.glass-form-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 3rem 2.5rem !important;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.glass-form-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.6);
+}
