@@ -1,12 +1,11 @@
 export default {
   template: `
-    <div class="d-flex flex-column vh-100 parking-bg-container">
-      <div class="flex-grow-1 position-relative w-100 h-100">
-        <div class="parking-lines-overlay"></div>
-        <div class="parking-glow"></div>
-        <div class="parking-glow-2"></div>
+    <div class="d-flex flex-column vh-100 m-0">
+      <div class="flex-grow-1 position-relative p-0 w-100 h-100">
+        <img src="/static/Images/parking_image.webp" alt="Background" loading="lazy" class="w-100 position-absolute top-0 start-0 h-100"
+          style="object-fit: cover; filter: blur(3px) brightness(0.85); z-index: 0;">
         
-        <div class="glass-form-card-container">
+        <div class="glass-form-card-container z-2">
           <div class="glass-form-card mx-auto">
             <h2 class="text-center mb-4 fw-bold">Registration Form</h2>
 
