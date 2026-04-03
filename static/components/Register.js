@@ -1,16 +1,14 @@
 export default {
   template: `
-    <div class="d-flex flex-column vh-100">
-      <div class="flex-grow-1 position-relative">
-        <img 
-          src="/static/Images/parking.png" 
-          alt="registration" 
-          class="w-100 h-100 position-absolute top-0 start-0" 
-          style="object-fit: cover; filter: blur(3px); z-index: 0;"
-        >
-        <div class="position-relative mx-auto shadow-lg rounded p-4"
-            style="max-width: 360px; top: 50%; transform: translateY(-50%); z-index: 1; background-color: #d0dfddff;">
-          <h2 class="text-center mb-4 fw-bold">Registration Form</h2>
+    <div class="d-flex flex-column vh-100 parking-bg-container">
+      <div class="flex-grow-1 position-relative w-100 h-100">
+        <div class="parking-lines-overlay"></div>
+        <div class="parking-glow"></div>
+        <div class="parking-glow-2"></div>
+        
+        <div class="glass-form-card-container">
+          <div class="glass-form-card mx-auto">
+            <h2 class="text-center mb-4 fw-bold">Registration Form</h2>
 
           <div class="mb-3">
             <label for="email" class="form-label fw-semibold">Email address</label>
@@ -41,6 +39,7 @@ export default {
           </div>
           <div class="d-grid">
             <button class="btn btn-primary" @click="addUser">Register</button>
+          </div>
           </div>
         </div>
       </div>
