@@ -1,34 +1,31 @@
 export default {
   template: `
-  <div class="d-flex flex-column vh-100 m-0">
-    <div class="flex-grow-1 position-relative p-0 w-100 h-100">
-      <img src="/static/Images/parking_image.webp" alt="Background" loading="lazy" class="w-100 position-absolute top-0 start-0 h-100"
+  <div class="m-0 w-100" style="height: calc(100vh - 120px);">
+    <div class="position-relative w-100 h-100 p-0">
+      <img src="/static/Images/parking_image.webp" alt="Background" class="w-100 position-absolute top-0 start-0 h-100"
         style="object-fit: cover; filter: blur(3px) brightness(0.85); z-index: 0;">
       
       <div class="glass-form-card-container z-2">
         <div class="glass-form-card mx-auto">
-          <h2 class="text-center mb-4 fw-bold">Login Form</h2>
-        <p v-if="message" class="text-danger fw-semibold text-center mb-3">{{message}}</p>
-        <div class="mb-3">
-          <label for="email" class="form-label fw-semibold">Email address</label>
-          <div class="input-group">
-            <span class="input-group-text bg-light"><i class="bi bi-envelope-fill text-secondary"></i></span>
-            <input type="email" class="form-control" id="email" v-model="formData.email" placeholder="name@example.com">
+          <h3 class="text-center mb-4 fw-bold" style="color: #0c4a6e;">Welcome Back</h3>
+          <p v-if="message" class="text-danger fw-semibold text-center mb-3">{{message}}</p>
+          
+          <div class="form-floating mb-4 position-relative">
+            <input type="email" class="form-control custom-input pb-2 pt-4" id="email" v-model="formData.email" placeholder="name@example.com">
+            <label for="email" class="text-muted"><i class="bi bi-envelope-fill me-2"></i>Email address</label>
           </div>
-        </div>
 
-        <div class="mb-4">
-          <label for="password" class="form-label fw-semibold">Password</label>
-          <div class="input-group">
-            <input :type="showPassword ? 'text' : 'password'" class="form-control" id="password" v-model="formData.password" placeholder="Enter your password">
-            <span class="input-group-text" style="cursor: pointer;" @click="showPassword = !showPassword">
-              <i :class="showPassword ? 'bi bi-eye-slash' : 'bi bi-eye'"></i>
+          <div class="form-floating mb-4 position-relative">
+            <input :type="showPassword ? 'text' : 'password'" class="form-control custom-input pb-2 pt-4 pe-5" id="password" v-model="formData.password" placeholder="Enter your password">
+            <label for="password" class="text-muted"><i class="bi bi-lock-fill me-2"></i>Password</label>
+            <span class="position-absolute text-muted" style="right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; z-index: 10;" @click="showPassword = !showPassword">
+              <i :class="showPassword ? 'bi bi-eye-slash-fill' : 'bi bi-eye-fill'"></i>
             </span>
           </div>
-        </div>
 
-        <div class="d-grid">
-          <button class="btn btn-primary" @click="loginUser">Login</button>
+          <div class="d-grid mt-4">
+            <button class="btn custom-btn" @click="loginUser">Login to Account</button>
+          </div>
         </div>
       </div>
     </div>
