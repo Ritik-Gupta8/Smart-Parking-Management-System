@@ -235,12 +235,9 @@ Generates and emails comprehensive monthly reports including:
 
 ## Default Credentials
 
-**Admin Account:**
-- Email: `admin@gmail.com`
-- Password: `admin@`
-- Role: admin
+The application creates a default admin account on first run. For security reasons, credentials are not published here. Please check the application setup code or contact the repository owner for initial access.
 
-**Note:** Change default credentials in production!
+**Note:** Always change default credentials immediately after first login!
 
 ## Development
 
