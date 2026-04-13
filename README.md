@@ -2,6 +2,16 @@
 
 A full-stack web application for managing parking lots, reservations, and user bookings with real-time availability tracking.
 
+## 🎯 Key Highlights
+
+- 🏗️ **Full-Stack Application**: Flask backend + Vue.js frontend
+- 🔐 **Role-Based Access**: Separate admin and user interfaces
+- ⚡ **Real-Time Updates**: Live parking spot availability tracking
+- 📊 **Analytics Dashboard**: Revenue tracking and usage statistics
+- 📧 **Automated Notifications**: Daily reminders and monthly reports via email
+- 💾 **Data Export**: CSV export functionality for reservation history
+- 🎨 **Modern UI**: Responsive design with Bootstrap 5
+
 ## Overview
 
 This application provides a comprehensive parking management solution with separate interfaces for administrators and users. Administrators can manage parking lots and monitor occupancy, while users can book available spots, track their reservations, and view parking history.
