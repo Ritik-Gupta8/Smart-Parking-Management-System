@@ -6,6 +6,12 @@ A full-stack web application for managing parking lots, reservations, and user b
 
 This application provides a comprehensive parking management solution with separate interfaces for administrators and users. Administrators can manage parking lots and monitor occupancy, while users can book available spots, track their reservations, and view parking history.
 
+## Live Demo
+
+🚀 **Deployed on Render**: The application has been successfully deployed and running in production for 3+ months.
+
+> **Note**: This is an academic project developed for learning purposes.
+
 ## Features
 
 ### Admin Features
