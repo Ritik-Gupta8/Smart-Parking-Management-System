@@ -64,14 +64,19 @@ This application provides a comprehensive parking management solution with separ
 
 1. **Clone the repository**
 ```bash
-git clone <repository-url>
-cd parking-lot-app
+git clone https://github.com/Ritik-Gupta8/Smart-Parking-Management-System.git
+cd Smart-Parking-Management-System
 ```
 
 2. **Create virtual environment**
 ```bash
+# On Windows
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+venv\Scripts\activate
+
+# On Linux/Mac
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 3. **Install dependencies**
@@ -82,28 +87,30 @@ pip install -r requirements.txt
 4. **Configure environment**
 The application uses `LocalDevelopmentConfig` by default. Key configurations:
 - Database: SQLite (`parking_lot_v2.sqlite3`)
-- Secret Key: Update in `application/config.py`
-- SMTP: Configure in `application/mail.py`
+- Secret Key: Update in `application/config.py` for production
+- SMTP: Configure in `application/mail.py` for email notifications
 
 5. **Initialize database**
 ```bash
 python app.py
 ```
-This creates the database and default admin user:
-- Email: `admin@gmail.com`
-- Password: `admin@`
+The database and default admin user will be created automatically on first run.
 
-6. **Start Redis server** (for background tasks)
+6. **Start Redis server** (optional - for background tasks)
 ```bash
+# On Windows: Download and run Redis from https://github.com/microsoftarchive/redis/releases
+# On Linux: 
 redis-server
+# On Mac:
+brew services start redis
 ```
 
-7. **Start Celery worker** (in separate terminal)
+7. **Start Celery worker** (optional - in separate terminal)
 ```bash
 celery -A app.celery worker --loglevel=info
 ```
 
-8. **Start Celery beat** (for scheduled tasks, in separate terminal)
+8. **Start Celery beat** (optional - for scheduled tasks, in separate terminal)
 ```bash
 celery -A app.celery beat --loglevel=info
 ```
@@ -114,6 +121,8 @@ python app.py
 ```
 
 The application will be available at `http://localhost:5000`
+
+> **Note**: Steps 6-8 are optional. The application works without Celery for basic functionality. Celery is only needed for background tasks like email reminders and CSV exports.
 
 ## Project Structure
 
