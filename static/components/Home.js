@@ -13,7 +13,8 @@ export default {
             Welcome to
           </div>
           <div class="fs-1 fw-bold text-break mt-1">
-            Parking Lot App
+            Smart Parking Management System
+
           </div>
           <div class="fs-5 fw-normal text-break mt-3">
             Your smart & reliable parking solution.<br>
